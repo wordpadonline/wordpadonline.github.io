@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WordPad Online – Free Online Word Processor & Text Editor</title>
+  <meta name="description" content="WordPad Online is a free, browser-based word processor. Write, format, and edit documents online with rich text editing, spell check, and export to PDF or DOCX. No download needed." />
+  <meta name="keywords" content="wordpad online, online word processor, free text editor, online notepad, rich text editor, online document editor, wordpad web app, write online, format text online" />
+  <meta name="author" content="WordPad Online" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wordpadonline.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WordPad Online – Free Online Word Processor" />
+  <meta property="og:description" content="Write, format, and edit documents online for free. No installation needed. Export to PDF or DOCX instantly." />
+  <meta property="og:url" content="https://wordpadonline.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://wordpadonline.github.io/assets/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WordPad Online – Free Online Word Processor" />
+  <meta name="twitter:description" content="Free browser-based word processor. Write and format documents online. No download required." />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "WordPad Online",
+    "url": "https://wordpadonline.github.io/",
+    "description": "A free, browser-based word processor with rich text editing, spell check, and document export features.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Rich Text Editing",
+      "Spell Check",
+      "Export to PDF",
+      "Export to DOCX",
+      "Font Formatting",
+      "Table Insertion",
+      "Image Upload",
+      "Auto Save",
+      "Word Count",
+      "Find and Replace"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is WordPad Online free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, WordPad Online is completely free. No signup, no download, no subscription required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export my document to PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can export your documents to PDF or DOCX format directly from the editor toolbar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does WordPad Online work on mobile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. WordPad Online is fully responsive and works seamlessly on smartphones and tablets."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/editor.css" />
+</head>
+<body>
+
+  <!-- HEADER (injected by JS) -->
+  <div id="header-root"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+      <div class="hero-blob blob-3"></div>
+      <div class="notebook-lines"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge animate-fade-up">
+          <span class="badge-dot"></span>
+          Free · No Login · No Download
+        </div>
+        <h1 class="hero-title animate-fade-up delay-1">
+          Write Smarter with<br /><span class="highlight-text">WordPad Online</span>
+        </h1>
+        <p class="hero-desc animate-fade-up delay-2">
+          A powerful, free online word processor right in your browser. Format documents, collaborate in style, and export to PDF or DOCX — all in seconds.
+        </p>
+        <div class="hero-cta animate-fade-up delay-3">
+          <a href="#editor" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Start Writing Free
+          </a>
+          <a href="#features" class="btn btn-outline">Explore Features</a>
+        </div>
+        <div class="hero-stats animate-fade-up delay-4">
+          <div class="stat"><strong>100%</strong><span>Free Forever</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>10+</strong><span>Export Formats</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>0</strong><span>Downloads Needed</span></div>
+        </div>
+      </div>
+      <div class="hero-visual animate-slide-right delay-2">
+        <div class="editor-preview-card">
+          <div class="preview-header">
+            <div class="preview-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="preview-title-bar">My Document.docx</span>
+            <div class="preview-actions">
+              <span class="action-icon">💾</span>
+              <span class="action-icon">📤</span>
+            </div>
+          </div>
+          <div class="preview-toolbar">
+            <span class="tb-btn active">B</span>
+            <span class="tb-btn"><i>I</i></span>
+            <span class="tb-btn"><u>U</u></span>
+            <span class="tb-sep"></span>
+            <span class="tb-btn">≡</span>
+            <span class="tb-btn">≣</span>
+            <span class="tb-sep"></span>
+            <span class="tb-btn font-btn">Arial ▾</span>
+            <span class="tb-btn font-btn">12 ▾</span>
+          </div>
+          <div class="preview-content">
+            <div class="preview-line title-line typing-anim">Welcome to WordPad Online</div>
+            <div class="preview-line sub-line">A modern word processor for everyone</div>
+            <div class="preview-line body-line"></div>
+            <div class="preview-line body-line short"></div>
+            <div class="preview-line body-line medium"></div>
+            <div class="preview-line body-line"></div>
+            <div class="preview-line body-line short"></div>
+            <div class="preview-cursor"></div>
+          </div>
+        </div>
+        <div class="floating-chip chip-1">✅ Auto Save</div>
+        <div class="floating-chip chip-2">📄 PDF Export</div>
+        <div class="floating-chip chip-3">🔤 Spell Check</div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f0f7ff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- EDITOR SECTION -->
+  <section class="editor-section" id="editor">
+    <div class="container">
+      <div class="section-label">The Editor</div>
+      <h2 class="section-title">Your Document, Right Here</h2>
+      <p class="section-sub">Start typing immediately — no sign-up, no friction. Full-featured rich text editing in your browser.</p>
+      <div class="editor-wrapper" id="editor-wrapper">
+        <!-- Editor injected by editor.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-label">Why WordPad Online?</div>
+      <h2 class="section-title">Everything You Need to Write</h2>
+      <p class="section-sub">Powerful word processing features without the bloat. Made for students, writers, professionals, and anyone who loves clean documents.</p>
+      <div class="features-grid">
+        <div class="feature-card animate-card" style="--delay:0s">
+          <div class="feature-icon" style="--ic:#e8f4ff">📝</div>
+          <h3>Rich Text Editing</h3>
+          <p>Bold, italic, underline, strikethrough, font families, sizes, colors, and more. Everything you need for professional formatting.</p>
+        </div>
+        <div class="feature-card animate-card" style="--delay:0.1s">
+          <div class="feature-icon" style="--ic:#fff3e0">📊</div>
+          <h3>Tables & Lists</h3>
+          <p>Insert dynamic tables, ordered and unordered lists, nested lists, and blockquotes to structure your content perfectly.</p>
+        </div>
+        <div class="feature-card animate-card" style="--delay:0.2s">
+          <div class="feature-icon" style="--ic:#e8ffe8">💾</div>
+          <h3>Auto Save</h3>
+          <p>Never lose your work. WordPad Online automatically saves your document to local storage as you type, every few seconds.</p>
+        </div>
+        <div class="feature-card animate-card" style="--delay:0.3s">
+          <div class="feature-icon" style="--ic:#fce4ec">📤</div>
+          <h3>Export to PDF & DOCX</h3>
+          <p>One-click export to PDF or plain text. Print directly from the browser or download your formatted document instantly.</p>
+        </div>
+        <div class="feature-card animate-card" style="--delay:0.4s">
+          <div class="feature-icon" style="--ic:#ede7f6">🔤</div>
+          <h3>Font & Color Tools</h3>
+          <p>Choose from dozens of fonts, set custom sizes, apply text colors and background highlights to make your document stand out.</p>
+        </div>
+        <div class="feature-card animate-card" style="--delay:0.5s">
+          <div class="feature-icon" style="--ic:#e0f7fa">🖼️</div>
+          <h3>Image Insertion</h3>
+          <p>Upload images directly into your document. Resize, align, and place visuals exactly where you need them.</p>
+        </div>
+        <div class="feature-card animate-card" style="--delay:0.6s">
+          <div class="feature-icon" style="--ic:#fff9c4">🔍</div>
+          <h3>Find & Replace</h3>
+          <p>Quickly locate any word or phrase in your document and replace it in one click. Supports case-sensitive search.</p>
+        </div>
+        <div class="feature-card animate-card" style="--delay:0.7s">
+          <div class="feature-icon" style="--ic:#fbe9e7">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>Write on the go. WordPad Online works perfectly on smartphones and tablets with a fully responsive layout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS SECTION -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">Start Writing in 3 Steps</h2>
+      <p class="section-sub">No account, no installation. Just open, write, and export.</p>
+      <div class="steps-row">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon">🌐</div>
+          <h3>Open in Browser</h3>
+          <p>Visit WordPad Online in any modern browser — Chrome, Firefox, Edge, Safari. Works on all devices, no download required.</p>
+        </div>
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon">✍️</div>
+          <h3>Write & Format</h3>
+          <p>Start typing immediately. Use the rich toolbar to format text, add headings, insert tables, and customize fonts and colors.</p>
+        </div>
+        <div class="step-connector">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon">📥</div>
+          <h3>Save & Export</h3>
+          <p>Auto-save keeps your work safe. Export to PDF, print, or copy your content to use anywhere you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES SECTION -->
+  <section class="usecases-section" id="use-cases">
+    <div class="container">
+      <div class="section-label">Who Uses It?</div>
+      <h2 class="section-title">Built for Everyone Who Writes</h2>
+      <p class="section-sub">From essays and reports to letters and meeting notes — WordPad Online handles it all.</p>
+      <div class="usecases-grid">
+        <div class="usecase-card uc-students">
+          <div class="uc-emoji">🎓</div>
+          <h3>Students</h3>
+          <p>Write essays, take notes, draft reports, and format academic documents with ease. Perfect for school and college work.</p>
+          <ul>
+            <li>Essay writing</li>
+            <li>Research notes</li>
+            <li>Assignment formatting</li>
+          </ul>
+        </div>
+        <div class="usecase-card uc-professionals">
+          <div class="uc-emoji">💼</div>
+          <h3>Professionals</h3>
+          <p>Draft business letters, memos, proposals, and reports quickly without switching between apps or installing software.</p>
+          <ul>
+            <li>Business letters</li>
+            <li>Meeting minutes</li>
+            <li>Project proposals</li>
+          </ul>
+        </div>
+        <div class="usecase-card uc-writers">
+          <div class="uc-emoji">📖</div>
+          <h3>Writers & Bloggers</h3>
+          <p>Outline articles, draft blog posts, and write stories in a distraction-free environment with powerful formatting tools.</p>
+          <ul>
+            <li>Blog posts & articles</li>
+            <li>Short story drafts</li>
+            <li>Content outlines</li>
+          </ul>
+        </div>
+        <div class="usecase-card uc-teachers">
+          <div class="uc-emoji">🏫</div>
+          <h3>Teachers & Educators</h3>
+          <p>Create worksheets, lesson plans, quizzes, and handouts. Format with headings, tables, and lists for classroom-ready documents.</p>
+          <ul>
+            <li>Lesson plans</li>
+            <li>Worksheets</li>
+            <li>Assessment materials</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEYBOARD SHORTCUTS SECTION -->
+  <section class="shortcuts-section" id="shortcuts">
+    <div class="container">
+      <div class="section-label">Power User Tips</div>
+      <h2 class="section-title">Keyboard Shortcuts for Speed</h2>
+      <p class="section-sub">Supercharge your writing workflow with these built-in keyboard shortcuts.</p>
+      <div class="shortcuts-grid">
+        <div class="shortcut-group">
+          <h4>Formatting</h4>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>B</kbd><span>Bold</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>I</kbd><span>Italic</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>U</kbd><span>Underline</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd><span>Strikethrough</span></div>
+        </div>
+        <div class="shortcut-group">
+          <h4>Document</h4>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>S</kbd><span>Save Document</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>P</kbd><span>Print / Export PDF</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>Z</kbd><span>Undo</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>Y</kbd><span>Redo</span></div>
+        </div>
+        <div class="shortcut-group">
+          <h4>Edit</h4>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>A</kbd><span>Select All</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>C</kbd><span>Copy</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>V</kbd><span>Paste</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>F</kbd><span>Find & Replace</span></div>
+        </div>
+        <div class="shortcut-group">
+          <h4>Alignment</h4>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>L</kbd><span>Align Left</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>E</kbd><span>Align Center</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>R</kbd><span>Align Right</span></div>
+          <div class="shortcut-row"><kbd>Ctrl</kbd>+<kbd>J</kbd><span>Justify</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-label">Got Questions?</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know about WordPad Online.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is WordPad Online completely free?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! WordPad Online is 100% free with no hidden costs, no subscription plans, and no premium tiers. Every feature is available to every user, forever.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do I need to create an account?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No account needed. Simply open WordPad Online in your browser and start writing immediately. Your documents are saved locally in your browser's storage.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I export documents to PDF or Word format?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. You can export your documents to PDF using the browser's print function, or copy the rich text content for use in Word, Google Docs, or any other editor. Direct DOCX export is also supported.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is my document data private?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. WordPad Online saves your content only in your browser's local storage. Your documents never leave your device and are never sent to any server.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does it work on mobile and tablets?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. WordPad Online is fully responsive and optimized for mobile devices and tablets. The toolbar adapts to smaller screens for a comfortable writing experience on the go.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What browsers are supported?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>WordPad Online works on all modern browsers including Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, and Opera. We recommend using the latest version of your browser for the best experience.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I insert images into my document?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Use the image upload button in the toolbar to insert images from your device directly into the document. You can place images inline with text and align them as needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / INFO SECTION -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text">
+          <div class="section-label">About WordPad Online</div>
+          <h2 class="section-title">The Online Word Processor Built for the Modern Web</h2>
+          <p>WordPad Online is a free, browser-based word processing application inspired by the simplicity of classic WordPad but supercharged with modern web capabilities. Our mission is to make document creation accessible to everyone — students, teachers, professionals, and casual writers alike.</p>
+          <p>Unlike heavyweight office suites, WordPad Online focuses on what matters: fast load times, intuitive controls, and a distraction-free writing environment. No installations, no licenses, no bloat.</p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <span class="pillar-icon">⚡</span>
+              <div>
+                <strong>Fast & Lightweight</strong>
+                <p>Opens instantly, works offline after first load.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">🔒</span>
+              <div>
+                <strong>Private by Design</strong>
+                <p>Documents stay on your device. No servers, no tracking.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">🌍</span>
+              <div>
+                <strong>Accessible to All</strong>
+                <p>Free forever. Works on any device with a browser.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card-stack">
+            <div class="about-doc-card card-back"></div>
+            <div class="about-doc-card card-mid"></div>
+            <div class="about-doc-card card-front">
+              <div class="adc-header">
+                <span class="adc-icon">📄</span>
+                <span class="adc-name">My_Document.txt</span>
+              </div>
+              <div class="adc-lines">
+                <div class="adc-line full"></div>
+                <div class="adc-line full"></div>
+                <div class="adc-line half"></div>
+                <div class="adc-line full"></div>
+                <div class="adc-line three-quarters"></div>
+                <div class="adc-line full"></div>
+                <div class="adc-line half"></div>
+              </div>
+              <div class="adc-footer">
+                <span class="adc-badge">PDF</span>
+                <span class="adc-badge">DOCX</span>
+                <span class="adc-badge">TXT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-bg-shape"></div>
+        <div class="cta-content">
+          <h2>Ready to Start Writing?</h2>
+          <p>Join thousands of users who write, format, and export documents online — completely free.</p>
+          <a href="#editor" class="btn btn-white">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Open the Editor Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (injected by JS) -->
+  <div id="footer-root"></div>
+
+  <!-- MODALS -->
+  <div id="find-replace-modal" class="modal" role="dialog" aria-modal="true" aria-label="Find and Replace">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Find &amp; Replace</h3>
+        <button class="modal-close" id="close-find-replace">✕</button>
+      </div>
+      <div class="modal-body">
+        <label>Find
+          <input type="text" id="find-input" placeholder="Search text..." />
+        </label>
+        <label>Replace with
+          <input type="text" id="replace-input" placeholder="Replace text..." />
+        </label>
+        <div class="modal-actions">
+          <button class="btn btn-sm btn-outline" id="find-next-btn">Find Next</button>
+          <button class="btn btn-sm btn-primary" id="replace-btn">Replace</button>
+          <button class="btn btn-sm btn-primary" id="replace-all-btn">Replace All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="table-modal" class="modal" role="dialog" aria-modal="true" aria-label="Insert Table">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Insert Table</h3>
+        <button class="modal-close" id="close-table-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <label>Rows
+          <input type="number" id="table-rows" value="3" min="1" max="20" />
+        </label>
+        <label>Columns
+          <input type="number" id="table-cols" value="3" min="1" max="10" />
+        </label>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="insert-table-btn">Insert Table</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="image-modal" class="modal" role="dialog" aria-modal="true" aria-label="Insert Image">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Insert Image</h3>
+        <button class="modal-close" id="close-image-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <label>Upload Image
+          <input type="file" id="image-upload" accept="image/*" />
+        </label>
+        <p class="modal-note">Or paste an image URL below:</p>
+        <label>Image URL
+          <input type="text" id="image-url-input" placeholder="https://example.com/image.jpg" />
+        </label>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="insert-image-btn">Insert Image</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="link-modal" class="modal" role="dialog" aria-modal="true" aria-label="Insert Link">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Insert Link</h3>
+        <button class="modal-close" id="close-link-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <label>Display Text
+          <input type="text" id="link-text-input" placeholder="Link text..." />
+        </label>
+        <label>URL
+          <input type="url" id="link-url-input" placeholder="https://..." />
+        </label>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="insert-link-btn">Insert Link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-overlay"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
