@@ -946,38 +946,8 @@
 <body>
 
   <!-- HEADER -->
-  <header class="site-header" id="header">
-    <div class="header-inner">
-      <a href="#" class="logo">
-        <div class="logo-icon">📝</div>
-        <span>Note<span class="accent">Pad</span></span>
-      </a>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#how">How It Works</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="header-cta">
-        <a href="#notepad" class="btn btn-primary btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          Start
-        </a>
-        <button class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#how">How It Works</a>
-      <a href="#faq">FAQ</a>
-      <a href="#notepad" class="btn btn-primary btn-sm" style="margin-top: 12px; width: 100%; justify-content: center;">Start Writing</a>
-    </div>
-  </header>
+  <!-- HEADER (injected by JS) -->
+  <div id="header-root"></div>
 
   <!-- HERO SECTION -->
   <section class="hero" id="home">
@@ -1290,13 +1260,10 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p><strong>Online Notepad</strong> — Free Notes & Text Editor</p>
-      <p>Made with ❤️ for writers, students, and creative minds everywhere.</p>
-      <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-light);">© 2024 Online Notepad. All rights reserved. | <a href="#" style="color: var(--text-light);">Privacy</a> | <a href="#" style="color: var(--text-light);">Terms</a></p>
-    </div>
-  </footer>
+  <div class="modal-overlay" id="modal-overlay"></div>  
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>  
 
   <script>
     // ====== NOTEPAD FUNCTIONALITY ======
