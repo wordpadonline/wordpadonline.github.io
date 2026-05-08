@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPTELPNWRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GPTELPNWRR');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Diary – Free Digital Journal & Personal Diary App</title>
+  <meta name="description" content="Free online diary for personal journaling and daily reflections. No login required, no ads, completely private. Write your thoughts, track your mood, and keep memories with our secure online diary." />
+  <meta name="keywords" content="online diary, digital diary, free diary app, journal app, personal diary, online journal, diary software, mood tracker, private diary, journaling app" />
+  <meta name="author" content="Online Diary" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wordpadonline.github.io/diary" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Online Diary – Free Digital Journal & Personal Diary App" />
+  <meta property="og:description" content="Write your thoughts privately in our free online diary. No login, no ads, no distractions. Keep personal journals with mood tracking and auto-save." />
+  <meta property="og:url" content="https://wordpadonline.github.io/diary" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://wordpadonline.github.io/assets/diary-og.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Online Diary – Free Digital Journal & Personal Diary App" />
+  <meta name="twitter:description" content="Free online diary app for personal journaling. Write privately with mood tracking and auto-save." />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Online Diary",
+    "url": "https://wordpadonline.github.io/diary",
+    "description": "A free, secure online diary app for personal journaling with mood tracking and auto-save functionality.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Daily Journal Entries",
+      "Mood Tracking",
+      "Auto Save",
+      "No Login Required",
+      "No Ads",
+      "Export as PDF",
+      "Print Entries",
+      "Mobile Friendly",
+      "Privacy Protected",
+      "Search Entries"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Online Diary free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Online Diary is completely free. No signup, no login, no subscription required. Write your journal entries instantly and securely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my diary private and secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Your diary entries are stored locally on your device using browser storage. Your data never leaves your computer and is never sent to our servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I track my mood in the diary?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can select your daily mood (Happy, Sad, Neutral, Excited, Peaceful, Angry) with each entry to track your emotional journey over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work on mobile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Online Diary is fully responsive and works perfectly on smartphones and tablets for journaling on the go."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      background: linear-gradient(135deg, #f5e6ff 0%, #ffe6f7 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #d946ef 0%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: "Playfair Display", serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #d946ef;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: #d946ef;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d946ef 0%, #ec4899 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(217, 70, 239, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(217, 70, 239, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #d946ef;
+      border: 2px solid #d946ef;
+    }
+
+    .btn-secondary:hover {
+      background: #f5e6ff;
+    }
+
+    /* Description Section */
+    .description {
+      padding: 4rem 2rem;
+      background: white;
+      margin-top: 2rem;
+    }
+
+    .description-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .description h2 {
+      font-size: 2.5rem;
+      font-family: "Playfair Display", serif;
+      color: #d946ef;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .description-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .description-text p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .features-list li {
+      padding: 0.8rem 0;
+      font-size: 1.05rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .features-list li:before {
+      content: "✓";
+      color: #d946ef;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .feature-image {
+      text-align: center;
+    }
+
+    .feature-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Diary Editor Section */
+    .editor-section {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #f5e6ff 0%, #fff0f7 100%);
+    }
+
+    .editor-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .editor-title {
+      font-size: 2.2rem;
+      font-family: "Playfair Display", serif;
+      color: #d946ef;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .diary-editor {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .editor-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: #f9f5ff;
+      border-bottom: 2px solid #f0e6ff;
+    }
+
+    .date-input, .mood-select {
+      padding: 0.8rem;
+      border: 2px solid #e0d0ff;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    .date-input:focus, .mood-select:focus {
+      outline: none;
+      border-color: #d946ef;
+      background: #faf8ff;
+    }
+
+    .editor-textarea {
+      width: 100%;
+      min-height: 350px;
+      padding: 2rem;
+      border: none;
+      font-size: 1rem;
+      font-family: "Nunito", sans-serif;
+      resize: vertical;
+      background: white;
+    }
+
+    .editor-textarea:focus {
+      outline: none;
+    }
+
+    .editor-footer {
+      padding: 1.5rem;
+      background: #f9f5ff;
+      border-top: 2px solid #f0e6ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #999;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #d946ef;
+    }
+
+    .editor-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .editor-btn {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-save {
+      background: #d946ef;
+      color: white;
+    }
+
+    .btn-save:hover {
+      background: #c41fc4;
+      transform: translateY(-2px);
+    }
+
+    .btn-download {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-download:hover {
+      background: #059669;
+    }
+
+    .btn-copy {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .btn-copy:hover {
+      background: #2563eb;
+    }
+
+    .btn-clear {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-clear:hover {
+      background: #dc2626;
+    }
+
+    .btn-print {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .btn-print:hover {
+      background: #d97706;
+    }
+
+    /* Features Section */
+    .features-section {
+      padding: 4rem 2rem;
+      background: white;
+    }
+
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-family: "Playfair Display", serif;
+      color: #d946ef;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .features-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      padding: 2rem;
+      background: linear-gradient(135deg, #f5e6ff 0%, #fff0f7 100%);
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid #f0e6ff;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(217, 70, 239, 0.2);
+      border-color: #d946ef;
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      color: #d946ef;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #f5e6ff 0%, #ffe6f7 100%);
+    }
+
+    .how-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #d946ef 0%, #ec4899 100%);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin: 0 auto 1rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .step-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 2rem;
+      background: white;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-content {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border: 2px solid #f0e6ff;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #d946ef;
+      box-shadow: 0 4px 15px rgba(217, 70, 239, 0.1);
+    }
+
+    .faq-header {
+      padding: 1.5rem;
+      background: #f9f5ff;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #333;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+
+    .faq-header:hover {
+      background: #f0e6ff;
+    }
+
+    .faq-icon {
+      color: #d946ef;
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 1.5rem;
+      background: white;
+      color: #666;
+      line-height: 1.8;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #d946ef;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      color: #888;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .description-content {
+        grid-template-columns: 1fr;
+      }
+
+      .editor-header {
+        grid-template-columns: 1fr;
+      }
+
+      .editor-textarea {
+        min-height: 250px;
+      }
+
+      .editor-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stats {
+        width: 100%;
+      }
+
+      .editor-actions {
+        width: 100%;
+      }
+
+      .editor-btn {
+        flex: 1;
+        min-width: 100px;
+      }
+
+      .features-container {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-container {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .faq-header {
+        padding: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .faq-answer {
+        padding: 1rem;
+      }
+
+      .footer-links {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 1rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .hero {
+        padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .description {
+        padding: 2rem 1rem;
+      }
+
+      .editor-section {
+        padding: 2rem 1rem;
+      }
+
+      .editor-textarea {
+        padding: 1rem;
+      }
+
+      .features-section {
+        padding: 2rem 1rem;
+      }
+
+      .how-it-works {
+        padding: 2rem 1rem;
+      }
+
+      .faq-section {
+        padding: 2rem 1rem;
+      }
+
+      footer {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+ <div id="header-root"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Your Personal Diary, Online & Private</h1>
+    <p>A beautiful, free digital diary to journal your thoughts, track your mood, and preserve your memories. No login, no ads, 100% private.</p>
+    <div class="cta-buttons">
+      <a href="#editor" class="btn btn-primary">Start Writing</a>
+      <a href="#how" class="btn btn-secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Description Section -->
+  <section class="description">
+    <div class="description-container">
+      <h2>What is Online Diary?</h2>
+      <div class="description-content">
+        <div class="description-text">
+          <p>Online Diary is a completely free, secure platform for keeping a personal digital journal. Write your daily thoughts, feelings, and experiences without any distractions or requirements.</p>
+          <p>Your entries are stored securely on your device, ensuring complete privacy. No data is ever sent to our servers, and no signup is required. Simply open, write, and save.</p>
+          <ul class="features-list">
+            <li>Instant journaling without login</li>
+            <li>Track your daily mood and emotions</li>
+            <li>Auto-save your entries automatically</li>
+            <li>Download entries as text files</li>
+            <li>Print your diary pages</li>
+            <li>100% private and secure</li>
+            <li>Works on all devices</li>
+            <li>No ads or distractions</li>
+          </ul>
+        </div>
+        <div class="feature-image">
+          <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #d946ef 0%, #ec4899 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">📝</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diary Editor Section -->
+  <section class="editor-section" id="editor">
+    <div class="editor-container">
+      <h2 class="editor-title">Write Your Diary Entry</h2>
+      <div class="diary-editor">
+        <div class="editor-header">
+          <input type="date" id="entryDate" class="date-input" />
+          <select id="moodSelect" class="mood-select">
+            <option value="">Select your mood...</option>
+            <option value="😊 Happy">😊 Happy</option>
+            <option value="😢 Sad">😢 Sad</option>
+            <option value="😐 Neutral">😐 Neutral</option>
+            <option value="🤩 Excited">🤩 Excited</option>
+            <option value="😌 Peaceful">😌 Peaceful</option>
+            <option value="😠 Angry">😠 Angry</option>
+          </select>
+        </div>
+        <textarea id="diaryText" class="editor-textarea" placeholder="Write your thoughts, feelings, and experiences here. Your entry will be automatically saved..."></textarea>
+        <div class="editor-footer">
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-label">Words</span>
+              <span class="stat-value" id="wordCount">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Characters</span>
+              <span class="stat-value" id="charCount">0</span>
+            </div>
+          </div>
+          <div class="editor-actions">
+            <button class="editor-btn btn-save" onclick="saveEntry()">💾 Save</button>
+            <button class="editor-btn btn-download" onclick="downloadEntry()">⬇️ Download</button>
+            <button class="editor-btn btn-copy" onclick="copyEntry()">📋 Copy</button>
+            <button class="editor-btn btn-print" onclick="printEntry()">🖨️ Print</button>
+            <button class="editor-btn btn-clear" onclick="clearEntry()">🗑️ Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="features-grid">
+      <h2 class="section-title">Why Choose Online Diary?</h2>
+      <div class="features-container">
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>100% Private</h3>
+          <p>Your entries are stored locally on your device. No data is sent to any server. Complete privacy guaranteed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Auto-Save</h3>
+          <p>Your entries are automatically saved as you type. Never lose your thoughts or important memories again.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">😊</div>
+          <h3>Mood Tracking</h3>
+          <p>Track your emotional journey with mood selections. Understand your feelings and patterns over time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>Write your diary anytime, anywhere. Fully responsive design works perfectly on phones and tablets.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏰</div>
+          <h3>Date Tracking</h3>
+          <p>Automatically timestamp your entries. Keep organized and remember when each memory was created.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📥</div>
+          <h3>Easy Export</h3>
+          <p>Download your entries as text files or print them. Always have a backup of your memories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how">
+    <div class="how-container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Select Date & Mood</h3>
+          <p>Choose today's date and select how you're feeling. Your mood helps you track emotional patterns.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Write Your Entry</h3>
+          <p>Write freely about your day, thoughts, and feelings. No rules, no judgment, just honest journaling.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Auto-Save & Done</h3>
+          <p>Your entry is automatically saved. Download, print, or copy anytime you want to share or backup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="faq-container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-content">
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Is Online Diary really free to use?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes, Online Diary is completely free. No signup required, no login needed, and no hidden subscription fees. Write as many entries as you want, whenever you want, at no cost.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Is my diary completely private?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Absolutely. Your diary entries are stored only on your device using your browser's local storage. They never leave your computer, are never sent to our servers, and are not tracked or monitored in any way.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Can I track my mood with my entries?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes! You can select from six mood options: Happy, Sad, Neutral, Excited, Peaceful, or Angry. This helps you track your emotional journey and understand your mood patterns over time.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Is the diary saved automatically?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes. Your diary entries are automatically saved as you type. You can also manually click the Save button anytime. Your data is never lost as long as you don't clear your browser data.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Can I use it on my phone or tablet?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Absolutely! Online Diary is fully responsive and works perfectly on smartphones, tablets, and desktop computers. Write your diary entries on any device, anytime, anywhere.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>How do I backup or export my diary?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            You can download your entry as a text file, copy it to clipboard, or print it. This ensures you always have a backup of your memories outside of your browser's storage.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>What happens if I clear my browser history?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            If you clear your browser's cache and cookies, you may lose your diary entries. To prevent this, download your entries regularly as backup files to keep them safe.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Can I write multiple entries per day?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes. You can write as many entries as you'd like. Each entry can have its own date and mood. Simply save one entry, then start a new one in the text field.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-root"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="main.js"></script>
+
+  <script>
+    // Set today's date by default
+    document.getElementById('entryDate').valueAsDate = new Date();
+
+    // Update word and character count
+    const diaryText = document.getElementById('diaryText');
+    const wordCountEl = document.getElementById('wordCount');
+    const charCountEl = document.getElementById('charCount');
+
+    function updateCounts() {
+      const text = diaryText.value;
+      charCountEl.textContent = text.length;
+      wordCountEl.textContent = text.trim().split(/\s+/).filter(word => word.length > 0).length;
+      saveEntry();
+    }
+
+    diaryText.addEventListener('input', updateCounts);
+
+    // Auto-load diary entry from storage
+    function loadEntry() {
+      const today = document.getElementById('entryDate').value;
+      const saved = localStorage.getItem(`diary_${today}`);
+      const mood = localStorage.getItem(`mood_${today}`);
+
+      if (saved) diaryText.value = saved;
+      if (mood) document.getElementById('moodSelect').value = mood;
+
+      updateCounts();
+    }
+
+    // Save entry to storage
+    function saveEntry() {
+      const date = document.getElementById('entryDate').value;
+      const mood = document.getElementById('moodSelect').value;
+
+      if (date) {
+        localStorage.setItem(`diary_${date}`, diaryText.value);
+        if (mood) localStorage.setItem(`mood_${date}`, mood);
+      }
+    }
+
+    // Change date handler
+    document.getElementById('entryDate').addEventListener('change', () => {
+      loadEntry();
+    });
+
+    document.getElementById('moodSelect').addEventListener('change', saveEntry);
+
+    // Download entry
+    function downloadEntry() {
+      const date = document.getElementById('entryDate').value;
+      const mood = document.getElementById('moodSelect').value;
+      const text = diaryText.value;
+
+      const content = `Diary Entry\n${date ? `Date: ${date}` : ''}\n${mood ? `Mood: ${mood}` : ''}\n\n${text}`;
+      const element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+      element.setAttribute('download', `diary_${date || 'entry'}.txt`);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+
+    // Copy entry
+    function copyEntry() {
+      const date = document.getElementById('entryDate').value;
+      const mood = document.getElementById('moodSelect').value;
+      const text = diaryText.value;
+
+      const content = `Diary Entry\n${date ? `Date: ${date}` : ''}\n${mood ? `Mood: ${mood}` : ''}\n\n${text}`;
+      navigator.clipboard.writeText(content).then(() => {
+        alert('Diary entry copied to clipboard!');
+      });
+    }
+
+    // Print entry
+    function printEntry() {
+      const date = document.getElementById('entryDate').value;
+      const mood = document.getElementById('moodSelect').value;
+      const text = diaryText.value;
+
+      const printWindow = window.open('', '', 'height=600,width=800');
+      printWindow.document.write(`<html><head><title>Diary Entry</title></head><body>`);
+      printWindow.document.write(`<h2>Diary Entry</h2>`);
+      if (date) printWindow.document.write(`<p><strong>Date:</strong> ${date}</p>`);
+      if (mood) printWindow.document.write(`<p><strong>Mood:</strong> ${mood}</p>`);
+      printWindow.document.write(`<pre>${text}</pre>`);
+      printWindow.document.write(`</body></html>`);
+      printWindow.document.close();
+      printWindow.print();
+    }
+
+    // Clear entry with confirmation
+    function clearEntry() {
+      if (confirm('Are you sure you want to clear this entry? This cannot be undone.')) {
+        diaryText.value = '';
+        document.getElementById('moodSelect').value = '';
+        updateCounts();
+        saveEntry();
+      }
+    }
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    // Load on page load
+    window.addEventListener('load', loadEntry);
+  </script>
+</body>
+</html>
