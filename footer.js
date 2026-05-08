@@ -1,16 +1,22 @@
-/**
- * WordPad Online - Footer Component
- * Handles site footer injection and year auto-update.
- */
+// footer.js - WordPad Online Footer Component
 
-const footerHTML = `
-  <footer class="site-footer">
+(function() {
+  'use strict';
+
+  function createFooter() {
+    const footerRoot = document.getElementById('footer-root');
+    if (!footerRoot) return;
+
+    const currentYear = new Date().getFullYear();
+
+    footerRoot.innerHTML = `
+      <footer class="site-footer">
         <div class="container">
           <!-- Footer Grid -->
           <div class="footer-grid">
             <!-- Brand Column -->
             <div class="footer-brand">
-              <a href="#home" class="logo footer-logo-link" aria-label="WordPad Online Home">
+              <a href="/" class="logo" aria-label="WordPad Online Home">
                 <div class="logo-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 20h9"/>
@@ -31,12 +37,12 @@ const footerHTML = `
             <div class="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#home" class="footer-nav-link">Home</a></li>
-                <li><a href="#editor" class="footer-nav-link">Online Editor</a></li>
-                <li><a href="#features" class="footer-nav-link">All Features</a></li>
-                <li><a href="#how-it-works" class="footer-nav-link">How It Works</a></li>
-                <li><a href="#use-cases" class="footer-nav-link">Use Cases</a></li>
-                <li><a href="#shortcuts" class="footer-nav-link">Shortcuts</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#editor">Online Editor</a></li>
+                <li><a href="/#features">All Features</a></li>
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/#use-cases">Use Cases</a></li>
+                <li><a href="/#shortcuts">Shortcuts</a></li>
               </ul>
             </div>
 
@@ -44,24 +50,23 @@ const footerHTML = `
             <div class="footer-col">
               <h4>Resources</h4>
               <ul>
-                <li><a href="#faq" class="footer-nav-link">FAQ & Help</a></li>
-                <li><a href="#about" class="footer-nav-link">About Us</a></li>
-                <li><a href="#editor" class="footer-action-link" data-action="export-pdf">Export to PDF</a></li>
-                <li><a href="#editor" class="footer-action-link" data-action="export-docx">Export to DOCX</a></li>
-                <li><a href="#editor" class="footer-action-link" data-action="export-txt">Export to TXT</a></li>
-                <li><a href="#editor" class="footer-action-link" data-action="new-doc">New Document</a></li>
+                <li><a href="/#faq">FAQ & Help</a></li>                
+                <li><a href="/#editor" onclick="exportToPDF()">Export to PDF</a></li>
+                <li><a href="/#editor" onclick="exportToDocx()">Export to DOCX</a></li>
+                <li><a href="/#editor" onclick="exportToTxt()">Export to TXT</a></li>
+                <li><a href="/#editor">New Document</a></li>
               </ul>
             </div>
 
-            <!-- Legal & Contact -->
+            <!-- Contact -->
             <div class="footer-col">
               <h4>Pages</h4>
               <ul>
-                <li><a href="privacy" class="footer-info-link" data-info="privacy">Privacy Policy</a></li>
-                <li><a href="terms" class="footer-info-link" data-info="terms">Terms of Service</a></li>
-                <li><a href="cookies" class="footer-info-link" data-info="cookies">Cookie Policy</a></li>
-                <li><a href="about" class="footer-info-link" data-info="accessibility">About</a></li>
-                <li><a href="contact" class="footer-info-link" data-info="accessibility">Contact</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Use</a></li>
+                <li><a href="/cookies">Cookies Policy</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -88,22 +93,59 @@ const footerHTML = `
               Our tool works entirely in your browser — your documents never leave your device, ensuring complete privacy and security.
             </p>
             <div style="margin-top: 16px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-              <a href="#about" class="footer-bottom-link">📄 Open Source</a>
+              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">📄 Open Source</a>
               <span style="color: #475569;">·</span>
-              <a href="#about" class="footer-bottom-link">🔒 Privacy First</a>
+              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🔒 Privacy First</a>
               <span style="color: #475569;">·</span>
-              <a href="#about" class="footer-bottom-link">🌍 Accessible to All</a>
+              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🌍 Accessible to All</a>
               <span style="color: #475569;">·</span>
-              <a href="#about" class="footer-bottom-link">⚡ Fast & Lightweight</a>
+              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">⚡ Fast & Lightweight</a>
             </div>
           </div>
         </div>
       </footer>
-`;
+    `;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const footerRoot = document.getElementById('footer-root');
-  if (footerRoot) {
-    footerRoot.innerHTML = footerHTML;
+    setupFooterEvents();
   }
-});
+
+  function setupFooterEvents() {
+    // Back to top functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+          backToTopBtn.style.opacity = '1';
+          backToTopBtn.style.pointerEvents = 'all';
+        } else {
+          backToTopBtn.style.opacity = '0';
+          backToTopBtn.style.pointerEvents = 'none';
+        }
+      });
+
+      backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Handle email protection (basic anti-spam)
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // You could add analytics tracking here
+        console.log('Support email clicked');
+      });
+    });
+  }
+
+  // Initialize footer when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createFooter);
+  } else {
+    createFooter();
+  }
+})();
