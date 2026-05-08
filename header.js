@@ -26,11 +26,11 @@
             <a href="/">Home</a>
             <a href="#editor">Editor</a>
             <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#use-cases">Use Cases</a>
-            <a href="#shortcuts">Shortcuts</a>
-            <a href="#faq">FAQ</a>
-            <a href="#about">About</a>
+            <a href="/diary">Diary</a>
+            <a href="/list-maker">List Maker</a>
+            <a href="/#shortcuts">Shortcuts</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#about">About</a>
           </nav>
 
           <!-- Header CTA -->
@@ -54,10 +54,10 @@
         <!-- Mobile Navigation -->
         <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
           <a href="/">🏠 Home</a>
-          <a href="#editor">✏️ Editor</a>
+          <a href="/#editor">✏️ Editor</a>
           <a href="#features">✨ Features</a>
-          <a href="#how-it-works">📋 How It Works</a>
-          <a href="#use-cases">👥 Use Cases</a>
+          <a href="/diary">📋 Diary</a>
+          <a href="/list-maker">👥 List Maker</a>
           <a href="#shortcuts">⌨️ Shortcuts</a>
           <a href="#faq">❓ FAQ</a>
           <a href="#about">ℹ️ About</a>
