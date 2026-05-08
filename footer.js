@@ -83,25 +83,7 @@
               <span class="footer-tag">Secure</span>
               <span class="footer-tag">Private</span>
             </div>
-          </div>
-
-          <!-- Extended Footer Info -->
-          <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #1e293b; text-align: center;">
-            <p style="font-size: 0.78rem; color: #475569; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-              WordPad Online is an independent, free web-based word processor inspired by the simplicity of classic WordPad. 
-              We are not affiliated with Microsoft Corporation. WordPad is a registered trademark of Microsoft. 
-              Our tool works entirely in your browser — your documents never leave your device, ensuring complete privacy and security.
-            </p>
-            <div style="margin-top: 16px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">📄 Open Source</a>
-              <span style="color: #475569;">·</span>
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🔒 Privacy First</a>
-              <span style="color: #475569;">·</span>
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🌍 Accessible to All</a>
-              <span style="color: #475569;">·</span>
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">⚡ Fast & Lightweight</a>
-            </div>
-          </div>
+          </div>          
         </div>
       </footer>
     `;
