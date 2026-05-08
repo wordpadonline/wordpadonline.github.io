@@ -62,12 +62,11 @@
             <div class="footer-col">
               <h4>Pages</h4>
               <ul>
-                <li><a href="/privacy" onclick="return false;" title="Your documents never leave your device">Privacy Policy</a></li>
-                <li><a href="/terms" onclick="return false;" title="No cookies, no tracking">Terms of Service</a></li>
-                <li><a href="/cookies" onclick="return false;">Cookie Policy</a></li>
-                <li><a href="/about" onclick="return false;">About</a></li>
-                <li><a href="/contact" onclick="return false;">Contact</a></li>
-                <li><a href="mailto:g98844836@gmail.com">Email</a></li>
+                <li><a href="privacy" onclick="return false;" title="Your documents never leave your device">Privacy Policy</a></li>
+                <li><a href="terms" onclick="return false;" title="No cookies, no tracking">Terms of Service</a></li>
+                <li><a href="cookies" onclick="return false;">Cookie Policy</a></li>
+                <li><a href="about" onclick="return false;">About</a></li>
+                <li><a href="contact" onclick="return false;">Contact</a></li>                
               </ul>
             </div>
           </div>
