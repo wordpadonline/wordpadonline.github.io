@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://wordpadonline.github.io/sitemap.xml
