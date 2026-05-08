@@ -16,7 +16,7 @@
           <div class="footer-grid">
             <!-- Brand Column -->
             <div class="footer-brand">
-              <a href="#home" class="logo" aria-label="WordPad Online Home">
+              <a href="/" class="logo" aria-label="WordPad Online Home">
                 <div class="logo-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 20h9"/>
@@ -37,12 +37,12 @@
             <div class="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#editor">Online Editor</a></li>
-                <li><a href="#features">All Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#use-cases">Use Cases</a></li>
-                <li><a href="#shortcuts">Shortcuts</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#editor">Online Editor</a></li>
+                <li><a href="/#features">All Features</a></li>
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/#use-cases">Use Cases</a></li>
+                <li><a href="/#shortcuts">Shortcuts</a></li>
               </ul>
             </div>
 
@@ -50,24 +50,24 @@
             <div class="footer-col">
               <h4>Resources</h4>
               <ul>
-                <li><a href="#faq">FAQ & Help</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#editor" onclick="exportToPDF()">Export to PDF</a></li>
-                <li><a href="#editor" onclick="exportToDocx()">Export to DOCX</a></li>
-                <li><a href="#editor" onclick="exportToTxt()">Export to TXT</a></li>
-                <li><a href="#editor">New Document</a></li>
+                <li><a href="/#faq">FAQ & Help</a></li>                
+                <li><a href="/#editor" onclick="exportToPDF()">Export to PDF</a></li>
+                <li><a href="/#editor" onclick="exportToDocx()">Export to DOCX</a></li>
+                <li><a href="/#editor" onclick="exportToTxt()">Export to TXT</a></li>
+                <li><a href="/#editor">New Document</a></li>
               </ul>
             </div>
 
             <!-- Legal & Contact -->
             <div class="footer-col">
-              <h4>Legal</h4>
+              <h4>Pages</h4>
               <ul>
-                <li><a href="#" onclick="return false;" title="Your documents never leave your device">Privacy Policy</a></li>
-                <li><a href="#" onclick="return false;" title="No cookies, no tracking">Terms of Service</a></li>
-                <li><a href="#" onclick="return false;">Cookie Policy</a></li>
-                <li><a href="#" onclick="return false;">Accessibility</a></li>
-                <li><a href="mailto:support@wordpadonline.com">Contact Support</a></li>
+                <li><a href="/privacy" onclick="return false;" title="Your documents never leave your device">Privacy Policy</a></li>
+                <li><a href="/terms" onclick="return false;" title="No cookies, no tracking">Terms of Service</a></li>
+                <li><a href="/cookies" onclick="return false;">Cookie Policy</a></li>
+                <li><a href="/about" onclick="return false;">About</a></li>
+                <li><a href="/contact" onclick="return false;">Contact</a></li>
+                <li><a href="mailto:g98844836@gmail.com">Email</a></li>
               </ul>
             </div>
           </div>
