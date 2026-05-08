@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GPTELPNWRR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GPTELPNWRR');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Random Text Generator - Generate random words, sentences, paragraphs, and quotes instantly. Perfect for developers, designers, and content creators.">
+    <meta name="keywords" content="random text generator, random words, random sentences, random paragraphs, lorem ipsum, placeholder text, text generator">
+    <meta name="author" content="WordPad Online">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="canonical" href="https://wordpadonline.github.io/random-text" /> 
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Random Text Generator - Generate Placeholder Text Online">
+    <meta property="og:description" content="Instantly generate random words, sentences, paragraphs, and quotes. Free online text generator with advanced options.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wordpadonline.github.io/random-text">
+    <meta property="og:image" content="https://wordpadonline.github.io/og-image.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Text Generator">
+    <meta name="twitter:description" content="Generate random words, sentences, and paragraphs instantly with advanced options.">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Random Text Generator",
+        "description": "Free online random text generator for creating placeholder text",
+        "url": "https://wordpadonline.github.io/random-text",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a Random Text Generator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A random text generator creates placeholder or dummy text instantly. It's useful for designers, developers, and content creators who need sample text for mockups and prototypes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I customize the length of generated text?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! You can select different types (words, sentences, paragraphs) and specify the exact quantity you need."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <title>Random Text Generator - Free Placeholder Text Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4f46e5;
+            --primary-dark: #4338ca;
+            --primary-light: #6366f1;
+            --secondary-color: #f59e0b;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --surface-light: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border-color: #475569;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--background) 0%, #1a1f35 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+       
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, rgba(79, 70, 229, 0.1) 0%, transparent 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Description Section */
+        .description {
+            padding: 4rem 2rem;
+            background: var(--surface);
+            margin: 2rem 0;
+        }
+
+        .description-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .description h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .description p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .features-checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .feature-item p {
+            margin-bottom: 0;
+        }
+
+        /* Generator Section */
+        .generator-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .generator-container {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 3rem;
+        }
+
+        .generator-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .control-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--surface-light);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--surface-light);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+
+        .output-area {
+            background: var(--background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            min-height: 200px;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            word-wrap: break-word;
+            color: var(--text-secondary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .output-empty {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 2rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.2);
+        }
+
+        .feature-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 2rem;
+            background: var(--surface);
+            margin: 2rem 0;
+        }
+
+        .how-it-works-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--surface);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--surface-light);
+        }
+
+        .faq-question-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .faq-toggle {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-text {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .control-group {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .description h2,
+            .how-it-works h2,
+            .faq-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .generator-container {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card {
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+   <!-- Navigation -->
+    <div id="header-root"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Random Text Generator</h1>
+        <p>Generate random words, sentences, paragraphs, and quotes instantly for your mockups, designs, and testing needs.</p>
+        <button class="cta-button" onclick="document.getElementById('generator').scrollIntoView({behavior: 'smooth'})">Start Generating</button>
+    </section>
+
+    <!-- Description Section -->
+    <section class="description">
+        <div class="description-content">
+            <h2>What is Random Text Generator?</h2>
+            <p>
+                Random Text Generator is a powerful tool that creates placeholder text for designers, developers, and content creators. Whether you need sample words for typography, sentences for layout testing, or paragraphs for design mockups, this tool generates realistic random text instantly.
+            </p>
+            <p>
+                Perfect for web designers creating mockups, developers testing text overflow, content creators working on templates, and anyone who needs quick placeholder content without the hassle of Lorem Ipsum.
+            </p>
+
+            <div class="features-checklist">
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <p><strong>Multiple Text Types:</strong> Generate words, sentences, paragraphs, and quotes</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <p><strong>Customizable Quantity:</strong> Choose exactly how much text you need</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <p><strong>Instant Copying:</strong> Copy generated text to clipboard with one click</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <p><strong>Free & No Registration:</strong> Use without login or account creation</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <p><strong>Completely Private:</strong> Works offline, no data collected</p>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <p><strong>Mobile Friendly:</strong> Works perfectly on all devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generator Section -->
+    <section id="generator" class="generator-section">
+        <div class="generator-container">
+            <h2 class="generator-title">Random Text Generator</h2>
+
+            <div class="control-group">
+                <div class="form-group">
+                    <label for="textType">Text Type</label>
+                    <select id="textType">
+                        <option value="words">Random Words</option>
+                        <option value="sentences">Random Sentences</option>
+                        <option value="paragraphs">Random Paragraphs</option>
+                        <option value="quotes">Random Quotes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" value="5" min="1" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="length">Word Length</label>
+                    <select id="length">
+                        <option value="any">Any</option>
+                        <option value="short">Short (1-5 chars)</option>
+                        <option value="medium">Medium (6-10 chars)</option>
+                        <option value="long">Long (11+ chars)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="generateText()">Generate Text</button>
+                <button class="btn btn-secondary" onclick="copyToClipboard()">📋 Copy</button>
+                <button class="btn btn-secondary" onclick="downloadText()">⬇️ Download</button>
+                <button class="btn btn-secondary" onclick="clearOutput()">🗑️ Clear</button>
+            </div>
+
+            <div id="output" class="output-area">
+                <div class="output-empty">Your generated text will appear here...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="generator-section">
+        <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: var(--primary-color);">Why Use Random Text Generator?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-card-icon">⚡</div>
+                <h3>Instant Generation</h3>
+                <p>Generate text in milliseconds. No waiting, no delays. Create placeholder content at lightning speed.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">🎨</div>
+                <h3>Perfect for Designers</h3>
+                <p>Create realistic mockups with sample text. Test typography, spacing, and layout without real content.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">👨‍💻</div>
+                <h3>Developer Friendly</h3>
+                <p>Test text overflow, responsive designs, and edge cases with various text lengths and types.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">📝</div>
+                <h3>Multiple Formats</h3>
+                <p>Choose from words, sentences, paragraphs, and quotes based on your specific needs.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">🔒</div>
+                <h3>100% Private</h3>
+                <p>Works entirely offline. Your generated text never leaves your browser. Complete privacy guaranteed.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-icon">📱</div>
+                <h3>Works Everywhere</h3>
+                <p>Mobile, tablet, or desktop. Generate text anytime, anywhere with full responsiveness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="how-it-works-content">
+            <h2>How to Use Random Text Generator</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Select Text Type</h3>
+                    <p>Choose what kind of text you want to generate: words, sentences, paragraphs, or quotes.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Set Quantity & Options</h3>
+                    <p>Specify how much text you need and any additional options like word length preferences.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Generate & Use</h3>
+                    <p>Click generate, copy the text to your clipboard, and use it in your projects instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">What is a Random Text Generator?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    A Random Text Generator is a tool that creates placeholder or dummy text instantly. It's perfect for designers creating mockups, developers testing layouts, and content creators needing sample text without using actual content.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">Can I customize the length of generated text?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    Yes! You can select different text types (words, sentences, paragraphs, quotes) and specify the exact quantity you need. You can also filter by word length (short, medium, long) for more control.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">Is this tool free to use?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    Absolutely! Random Text Generator is completely free and requires no sign-up or registration. You can use it as much as you want without any limitations.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">Can I download the generated text?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    Yes! You can copy the text to your clipboard with one click or download it as a text file. Both options are available in the control panel.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">Does this tool collect my data?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    No, absolutely not. Random Text Generator works entirely in your browser and doesn't send any data to servers. Your privacy is completely protected.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">What are good use cases for random text?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    Random text is perfect for: UI/UX design mockups, testing responsive layouts, web development prototypes, typography testing, content management system testing, email template design, app mockups, and testing text overflow scenarios.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">How is the text generated?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    The tool uses a carefully curated word list to randomly select and combine words into meaningful sentences and paragraphs. This creates realistic placeholder text that looks natural in design mockups.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span class="faq-question-text">Can I use this on mobile devices?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-text">
+                    Yes! Random Text Generator is fully responsive and works seamlessly on all devices including smartphones, tablets, and desktop computers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <div id="footer-root"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="main.js"></script>
+
+    <script>
+        // Word lists for random text generation
+        const wordLists = {
+            common: ['the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have', 'i', 'it', 'for', 'not', 'on', 'with', 'he', 'as', 'you', 'do', 'at', 'this', 'but', 'his', 'by', 'from', 'they', 'we', 'say', 'her', 'she', 'or', 'an', 'will', 'my', 'one', 'all', 'would', 'there', 'their', 'what', 'so', 'up', 'out', 'if', 'about', 'who', 'get', 'which', 'go', 'me', 'when', 'make', 'can', 'like', 'time', 'no', 'just', 'him', 'know', 'take', 'people', 'into', 'year', 'your', 'good', 'some', 'could', 'them', 'see', 'other', 'than', 'then', 'now', 'look', 'only', 'come', 'its', 'over', 'think', 'also', 'back', 'after', 'use', 'two', 'how', 'our', 'work', 'first', 'well', 'way', 'even', 'new', 'want', 'because', 'any', 'these', 'give', 'day', 'most', 'us', 'is', 'was', 'are', 'been', 'being', 'seem'],
+            adjectives: ['amazing', 'beautiful', 'creative', 'dynamic', 'elegant', 'fantastic', 'great', 'innovative', 'intelligent', 'modern', 'powerful', 'professional', 'remarkable', 'stunning', 'wonderful', 'bright', 'calm', 'clear', 'clever', 'colorful', 'comfortable', 'cool', 'cute', 'delightful', 'detailed', 'different', 'easy', 'effective', 'efficient', 'excellent', 'exciting', 'friendly', 'fun', 'funny', 'gentle', 'glorious', 'good', 'gorgeous', 'happy', 'helpful', 'honest', 'impressive', 'incredible', 'interesting', 'joyful', 'kind', 'lovely', 'lucky', 'magnificent', 'marvelous', 'meaningful', 'nice', 'outstanding', 'perfect', 'pleasant', 'popular', 'productive', 'proud', 'quick', 'quiet', 'rare', 'real', 'reliable', 'remarkable', 'responsive', 'rich', 'robust', 'safe', 'sensible', 'serious', 'sharp', 'simple', 'smooth', 'soft', 'solid', 'special', 'splendid', 'stable', 'strong', 'successful', 'suitable', 'superb', 'sure', 'swift', 'terrific', 'thoughtful', 'tiny', 'true', 'trustworthy', 'unique', 'useful', 'vivid', 'warm', 'wealthy', 'weird', 'whole', 'wise', 'witty', 'wonderful', 'worthy'],
+            verbs: ['accomplish', 'achieve', 'acquire', 'act', 'activate', 'adapt', 'add', 'adjust', 'admit', 'advance', 'advise', 'affect', 'afford', 'agree', 'alert', 'allow', 'alter', 'appear', 'apply', 'appreciate', 'approach', 'approve', 'arrange', 'arrive', 'ask', 'assess', 'assign', 'assist', 'associate', 'assume', 'assure', 'attach', 'attack', 'attend', 'attract', 'audit', 'avoid', 'awaken', 'balance', 'band', 'believe', 'belong', 'benefit', 'bid', 'bind', 'blog', 'blow', 'board', 'boost', 'border', 'borrow', 'bounce', 'branch', 'brand', 'break', 'breathe', 'breed', 'brew', 'bridge', 'brief', 'bring', 'broadcast', 'browse', 'build', 'bulk', 'burn', 'burst', 'bury', 'bust', 'calculate', 'call', 'calm', 'capture', 'care', 'carry', 'carve', 'catch', 'cause', 'celebrate', 'chain', 'challenge', 'change', 'channel', 'charge', 'charm', 'chart', 'chase', 'chat', 'check', 'cheer', 'choose', 'chop', 'circle', 'claim', 'clarify', 'clash', 'class', 'clean', 'clear', 'click', 'climb', 'cling', 'close', 'coach', 'coast', 'code', 'collaborate', 'collect', 'color', 'combine', 'come', 'command', 'comment', 'commit', 'communicate', 'compare', 'compete', 'compile', 'complain', 'complete', 'comply', 'compose', 'compress', 'compute', 'concern', 'conclude', 'conduct', 'confirm', 'conflict', 'connect', 'consider', 'consist', 'construct', 'consult', 'contain', 'continue', 'contract', 'contribute', 'control', 'convert', 'convince', 'cook', 'cool', 'cooperate', 'coordinate', 'copy', 'correct', 'correspond', 'cost', 'count', 'couple', 'course', 'cover', 'crack', 'craft', 'crash', 'crawl', 'create', 'credit', 'crew', 'cross', 'crouch', 'crowd', 'cruise', 'crush', 'cry', 'cultivate', 'curl', 'cut', 'cycle']
+        };
+
+        const quotes = [
+            "The only way to do great work is to love what you do.",
+            "Innovation distinguishes between a leader and a follower.",
+            "Life is what happens when you're busy making other plans.",
+            "The future belongs to those who believe in the beauty of their dreams.",
+            "It is during our darkest moments that we must focus to see the light.",
+            "The only impossible journey is the one you never begin.",
+            "Success is not final, failure is not fatal.",
+            "Believe you can and you're halfway there.",
+            "Do what you can, with what you have, where you are.",
+            "The best time to plant a tree was 20 years ago. The second best time is now."
+        ];
+
+        function getRandomElement(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function getRandomWord(length = 'any') {
+            let words = wordLists.common;
+            
+            if (length === 'short') {
+                words = words.filter(w => w.length <= 5);
+            } else if (length === 'medium') {
+                words = words.filter(w => w.length > 5 && w.length <= 10);
+            } else if (length === 'long') {
+                words = words.filter(w => w.length > 10);
+            }
+            
+            return getRandomElement(words);
+        }
+
+        function generateSentence(length = 'any') {
+            const sentenceLength = Math.floor(Math.random() * 7) + 5;
+            let sentence = [];
+            
+            for (let i = 0; i < sentenceLength; i++) {
+                if (i === 0) {
+                    let word = getRandomWord(length);
+                    sentence.push(word.charAt(0).toUpperCase() + word.slice(1));
+                } else {
+                    sentence.push(getRandomWord(length));
+                }
+            }
+            
+            return sentence.join(' ') + '.';
+        }
+
+        function generateParagraph(length = 'any') {
+            const sentenceCount = Math.floor(Math.random() * 5) + 3;
+            let sentences = [];
+            
+            for (let i = 0; i < sentenceCount; i++) {
+                sentences.push(generateSentence(length));
+            }
+            
+            return sentences.join(' ');
+        }
+
+        function generateText() {
+            const textType = document.getElementById('textType').value;
+            const quantity = parseInt(document.getElementById('quantity').value) || 1;
+            const length = document.getElementById('length').value;
+            const outputDiv = document.getElementById('output');
+            let result = [];
+
+            if (textType === 'words') {
+                for (let i = 0; i < quantity; i++) {
+                    result.push(getRandomWord(length));
+                }
+                outputDiv.textContent = result.join(', ');
+            } else if (textType === 'sentences') {
+                for (let i = 0; i < quantity; i++) {
+                    result.push(generateSentence(length));
+                }
+                outputDiv.textContent = result.join(' ');
+            } else if (textType === 'paragraphs') {
+                for (let i = 0; i < quantity; i++) {
+                    result.push(generateParagraph(length));
+                }
+                outputDiv.innerHTML = result.map(p => `<p>${p}</p>`).join('');
+            } else if (textType === 'quotes') {
+                for (let i = 0; i < Math.min(quantity, quotes.length); i++) {
+                    result.push(quotes[Math.floor(Math.random() * quotes.length)]);
+                }
+                outputDiv.innerHTML = result.map(q => `<p>"${q}"</p>`).join('');
+            }
+        }
+
+        function copyToClipboard() {
+            const outputDiv = document.getElementById('output');
+            const text = outputDiv.innerText;
+            
+            if (text.includes('Your generated text')) {
+                alert('Please generate text first!');
+                return;
+            }
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Text copied to clipboard!');
+            }).catch(() => {
+                alert('Failed to copy text');
+            });
+        }
+
+        function downloadText() {
+            const outputDiv = document.getElementById('output');
+            const text = outputDiv.innerText;
+            
+            if (text.includes('Your generated text')) {
+                alert('Please generate text first!');
+                return;
+            }
+
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', 'generated-text.txt');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        function clearOutput() {
+            document.getElementById('output').innerHTML = '<div class="output-empty">Your generated text will appear here...</div>';
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.closest('.faq-item');
+            faqItem.classList.toggle('active');
+        }
+
+        // Generate text on Enter key
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('quantity').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') generateText();
+            });
+        });
+    </script>
+</body>
+</html>
