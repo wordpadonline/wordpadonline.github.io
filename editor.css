@@ -11,6 +11,8 @@
   overflow: hidden;
   border: 1.5px solid #e2e8f0;
   transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .editor-container:focus-within {
@@ -27,10 +29,10 @@
   background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   border-bottom: 1.5px solid #e2e8f0;
   flex-wrap: wrap;
-  position: sticky;
-  top: 68px;
-  z-index: 10;
+  flex-shrink: 0;
   min-height: 52px;
+  position: relative;
+  z-index: 2;
 }
 
 .toolbar-group {
@@ -184,6 +186,7 @@
 
 /* ====== EDITOR CONTENT AREA ====== */
 .editor-content-area {
+  flex: 1;
   min-height: 400px;
   max-height: 60vh;
   overflow-y: auto;
@@ -434,6 +437,7 @@
   font-weight: 600;
   color: #64748b;
   min-height: 40px;
+  flex-shrink: 0;
 }
 
 .editor-statusbar span {
@@ -579,7 +583,6 @@
     padding: 8px 8px;
     gap: 1px;
     min-height: auto;
-    top: 56px;
   }
   
   .tool-btn {
@@ -694,12 +697,6 @@
   }
 }
 
-/* ====== DARK MODE SUPPORT (optional future feature) ====== */
-@media (prefers-color-scheme: dark) {
-  /* Keep light theme as default for now */
-  /* Dark mode styles can be added here in the future */
-}
-
 /* ====== PRINT STYLES ====== */
 @media print {
   .editor-toolbar,
@@ -714,8 +711,8 @@
   }
   
   .editor-content-area {
-    max-height: none;
-    overflow: visible;
+    max-height: none !important;
+    overflow: visible !important;
   }
   
   .wordpad-editor {
