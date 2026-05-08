@@ -16,7 +16,7 @@
           <div class="footer-grid">
             <!-- Brand Column -->
             <div class="footer-brand">
-              <a href="/" class="logo" aria-label="WordPad Online Home">
+              <a href="#home" class="logo" aria-label="WordPad Online Home">
                 <div class="logo-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 20h9"/>
@@ -37,12 +37,12 @@
             <div class="footer-col">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/#editor">Online Editor</a></li>
-                <li><a href="/#features">All Features</a></li>
-                <li><a href="/#how-it-works">How It Works</a></li>
-                <li><a href="/#use-cases">Use Cases</a></li>
-                <li><a href="/#shortcuts">Shortcuts</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#editor">Online Editor</a></li>
+                <li><a href="#features">All Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+                <li><a href="#shortcuts">Shortcuts</a></li>
               </ul>
             </div>
 
@@ -50,23 +50,24 @@
             <div class="footer-col">
               <h4>Resources</h4>
               <ul>
-                <li><a href="/#faq">FAQ & Help</a></li>                
-                <li><a href="/#editor" onclick="exportToPDF()">Export to PDF</a></li>
-                <li><a href="/#editor" onclick="exportToDocx()">Export to DOCX</a></li>
-                <li><a href="/#editor" onclick="exportToTxt()">Export to TXT</a></li>
-                <li><a href="/#editor">New Document</a></li>
+                <li><a href="#faq">FAQ & Help</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#editor" class="export-pdf-link">Export to PDF</a></li>
+                <li><a href="#editor" class="export-docx-link">Export to DOCX</a></li>
+                <li><a href="#editor" class="export-txt-link">Export to TXT</a></li>
+                <li><a href="#editor" class="new-doc-link">New Document</a></li>
               </ul>
             </div>
 
             <!-- Legal & Contact -->
             <div class="footer-col">
-              <h4>Pages</h4>
+              <h4>Legal</h4>
               <ul>
-                <li><a href="privacy" onclick="return false;" title="Your documents never leave your device">Privacy Policy</a></li>
-                <li><a href="terms" onclick="return false;" title="No cookies, no tracking">Terms of Service</a></li>
-                <li><a href="cookies" onclick="return false;">Cookie Policy</a></li>
-                <li><a href="about" onclick="return false;">About</a></li>
-                <li><a href="contact" onclick="return false;">Contact</a></li>                
+                <li><a href="#" class="privacy-link">Privacy Policy</a></li>
+                <li><a href="#" class="terms-link">Terms of Service</a></li>
+                <li><a href="#" class="cookies-link">Cookie Policy</a></li>
+                <li><a href="#" class="accessibility-link">Accessibility</a></li>
+                <li><a href="mailto:support@wordpadonline.com">Contact Support</a></li>
               </ul>
             </div>
           </div>
@@ -93,13 +94,13 @@
               Our tool works entirely in your browser — your documents never leave your device, ensuring complete privacy and security.
             </p>
             <div style="margin-top: 16px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">📄 Open Source</a>
+              <a href="#" class="info-link" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">📄 Open Source</a>
               <span style="color: #475569;">·</span>
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🔒 Privacy First</a>
+              <a href="#" class="info-link" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🔒 Privacy First</a>
               <span style="color: #475569;">·</span>
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🌍 Accessible to All</a>
+              <a href="#" class="info-link" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">🌍 Accessible to All</a>
               <span style="color: #475569;">·</span>
-              <a href="#" onclick="return false;" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">⚡ Fast & Lightweight</a>
+              <a href="#" class="info-link" style="color: #64748b; font-size: 0.78rem; font-weight: 600; text-decoration: none;">⚡ Fast & Lightweight</a>
             </div>
           </div>
         </div>
@@ -110,36 +111,160 @@
   }
 
   function setupFooterEvents() {
-    // Back to top functionality
-    const backToTopBtn = document.getElementById('back-to-top');
-    if (backToTopBtn) {
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 500) {
-          backToTopBtn.style.opacity = '1';
-          backToTopBtn.style.pointerEvents = 'all';
+    // Export to PDF link
+    document.querySelector('.export-pdf-link')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (typeof window.exportToPDF === 'function') {
+        window.exportToPDF();
+      } else {
+        handleExportFallback('pdf');
+      }
+    });
+
+    // Export to DOCX link
+    document.querySelector('.export-docx-link')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (typeof window.exportToDocx === 'function') {
+        window.exportToDocx();
+      } else {
+        handleExportFallback('docx');
+      }
+    });
+
+    // Export to TXT link
+    document.querySelector('.export-txt-link')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (typeof window.exportToTxt === 'function') {
+        window.exportToTxt();
+      } else {
+        handleExportFallback('txt');
+      }
+    });
+
+    // New Document link
+    document.querySelector('.new-doc-link')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      const editor = document.getElementById('wordpad-editor');
+      if (editor) {
+        editor.innerHTML = '<p>Start writing your new document here...</p>';
+        localStorage.removeItem('wordpad-online-content');
+        
+        // Scroll to editor
+        const editorSection = document.getElementById('editor');
+        if (editorSection) {
+          const headerHeight = 68;
+          const targetPosition = editorSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+        
+        // Show toast notification
+        const toast = document.getElementById('toast');
+        if (toast && typeof window.showToastMessage === 'function') {
+          window.showToastMessage('New document created');
+        }
+        
+        // Update word count
+        const wordCountEl = document.getElementById('word-count');
+        const charCountEl = document.getElementById('char-count');
+        if (wordCountEl) wordCountEl.textContent = 'Words: 0';
+        if (charCountEl) charCountEl.textContent = 'Characters: 0';
+      }
+    });
+
+    // Legal links - show info toast
+    const legalLinks = document.querySelectorAll('.privacy-link, .terms-link, .cookies-link, .accessibility-link');
+    legalLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const linkText = this.textContent.trim();
+        if (typeof window.showToastMessage === 'function') {
+          window.showToastMessage(`${linkText}: Your documents never leave your device. We don't collect any personal data.`);
         } else {
-          backToTopBtn.style.opacity = '0';
-          backToTopBtn.style.pointerEvents = 'none';
+          alert(`${linkText}: Your documents never leave your device. We don't collect any personal data.`);
         }
       });
+    });
 
-      backToTopBtn.addEventListener('click', function(e) {
+    // Info links
+    const infoLinks = document.querySelectorAll('.info-link');
+    infoLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
         e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
+        // Scroll to about section
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          const headerHeight = 68;
+          const targetPosition = aboutSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
       });
-    }
+    });
 
-    // Handle email protection (basic anti-spam)
+    // Handle email protection
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     emailLinks.forEach(link => {
       link.addEventListener('click', function(e) {
-        // You could add analytics tracking here
+        // Optional: Add analytics tracking here
         console.log('Support email clicked');
       });
     });
+  }
+
+  function handleExportFallback(type) {
+    const editor = document.getElementById('wordpad-editor');
+    if (!editor) {
+      if (typeof window.showToastMessage === 'function') {
+        window.showToastMessage('Please open the editor first before exporting');
+      } else {
+        alert('Please open the editor first before exporting');
+      }
+      return;
+    }
+
+    // Fallback export functions if editor.js hasn't loaded yet
+    switch(type) {
+      case 'pdf':
+        window.print();
+        break;
+      case 'docx':
+        const content = editor.innerHTML;
+        const htmlContent = `
+          <html xmlns:o="urn:schemas-microsoft-com:office:office" 
+                xmlns:w="urn:schemas-microsoft-com:office:word" 
+                xmlns="http://www.w3.org/TR/REC-html40">
+          <head><meta charset="UTF-8" /></head>
+          <body>${content}</body>
+          </html>`;
+        
+        const docxBlob = new Blob(['\ufeff', htmlContent], { type: 'application/msword' });
+        const docxUrl = URL.createObjectURL(docxBlob);
+        const docxLink = document.createElement('a');
+        docxLink.href = docxUrl;
+        docxLink.download = 'document.doc';
+        docxLink.click();
+        URL.revokeObjectURL(docxUrl);
+        break;
+      case 'txt':
+        const text = editor.innerText;
+        const txtBlob = new Blob([text], { type: 'text/plain' });
+        const txtUrl = URL.createObjectURL(txtBlob);
+        const txtLink = document.createElement('a');
+        txtLink.href = txtUrl;
+        txtLink.download = 'document.txt';
+        txtLink.click();
+        URL.revokeObjectURL(txtUrl);
+        break;
+    }
+
+    if (typeof window.showToastMessage === 'function') {
+      window.showToastMessage(`Document exported as ${type.toUpperCase()}`);
+    }
   }
 
   // Initialize footer when DOM is ready
