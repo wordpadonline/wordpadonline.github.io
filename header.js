@@ -11,7 +11,7 @@
       <header class="site-header" id="site-header">
         <div class="header-inner">
           <!-- Logo -->
-          <a href="#home" class="logo" aria-label="WordPad Online Home">
+          <a href="/" class="logo" aria-label="WordPad Online Home">
             <div class="logo-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 20h9"/>
@@ -23,7 +23,7 @@
 
           <!-- Desktop Navigation -->
           <nav class="nav-links" aria-label="Main navigation">
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
             <a href="#editor">Editor</a>
             <a href="#features">Features</a>
             <a href="#how-it-works">How It Works</a>
@@ -53,7 +53,7 @@
 
         <!-- Mobile Navigation -->
         <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-          <a href="#home">🏠 Home</a>
+          <a href="/">🏠 Home</a>
           <a href="#editor">✏️ Editor</a>
           <a href="#features">✨ Features</a>
           <a href="#how-it-works">📋 How It Works</a>
