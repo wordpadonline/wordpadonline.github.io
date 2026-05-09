@@ -28,7 +28,7 @@
             <a href="#features">Features</a>
             <a href="/diary">Diary</a>
             <a href="/list-maker">List Maker</a>
-            <a href="/#shortcuts">Shortcuts</a>
+            <a href="/notepad">Notepad</a>
             <a href="/#faq">FAQ</a>
             <a href="/#about">About</a>
           </nav>
@@ -58,7 +58,7 @@
           <a href="#features">✨ Features</a>
           <a href="/diary">📋 Diary</a>
           <a href="/list-maker">👥 List Maker</a>
-          <a href="#shortcuts">⌨️ Shortcuts</a>
+          <a href="/notepad">⌨️ Notepad</a>
           <a href="#faq">❓ FAQ</a>
           <a href="#about">ℹ️ About</a>
           <a href="#editor" class="btn btn-primary btn-sm" style="display: inline-flex; margin-top: 8px; width: fit-content;">
